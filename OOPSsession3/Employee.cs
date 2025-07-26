@@ -12,7 +12,7 @@ namespace OOPSsession3
         private string _name;
         private SecurityPrivilege _securityLevel;
         private decimal _salary;
-        private string _hireDate;
+        private HiringDate _hireDate;
         private Gender _gender;
 
         // Properties
@@ -40,7 +40,7 @@ namespace OOPSsession3
             set { _salary = value; }
         }
 
-        public string HireDate
+        public HiringDate HireDate
         {
             get { return _hireDate; }
             set { _hireDate = value; }
@@ -54,7 +54,7 @@ namespace OOPSsession3
 
         // Constructor
         public Employee(int id, string name, SecurityPrivilege securityLevel,
-                        decimal salary, string hireDate, Gender gender)
+                        decimal salary, HiringDate hireDate, Gender gender)
         {
             ID = id;
             Name = name;

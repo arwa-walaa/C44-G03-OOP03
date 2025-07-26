@@ -21,12 +21,14 @@
         {
             #region 1.	Design and implement a Class for the employees in a company
 
+            HiringDate hireDate = new HiringDate(12,12, 2023);
+
             Employee emp = new Employee(
                    101,
                    "Arwa",
                    SecurityPrivilege.Developer,
                    75000.50m,
-                   "2020, 5, 15",
+                   hireDate,
                    Gender.Male);
 
            
