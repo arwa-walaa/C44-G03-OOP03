@@ -38,7 +38,6 @@ namespace OOPSsession3
         public HiringDate HireDate { get; set; }
         public Gender EmployeeGender { get; set; }
 
-        // Constructor
         public Employee(int id, string name, SecurityPrivilege securityLevel,
                         decimal salary, HiringDate hireDate, Gender gender)
         {
@@ -50,7 +49,7 @@ namespace OOPSsession3
             EmployeeGender = gender;
         }
 
-        // Override ToString() method
+     
         public override string ToString()
         {
             return String.Format(

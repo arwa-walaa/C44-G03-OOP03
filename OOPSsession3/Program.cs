@@ -11,11 +11,11 @@
      
     }
 
-    // Enum for gender
+  
     public enum Gender
     {
-        Male,   // Represents 'M'
-        Female  // Represents 'F'
+        Male,   
+        Female  
     }
     internal class Program
     {
@@ -86,13 +86,31 @@
                 Gender.Male);
 
             // Display all employees
-            foreach (var emp in EmpArr)
-            {
-                Console.WriteLine(emp);
-                Console.WriteLine("-------------------");
-            }
+            //foreach (var emp in EmpArr)
+            //{
+            //    Console.WriteLine(emp);
+            //    Console.WriteLine("-------------------");
+            //}
 
             #endregion
+
+            #region 4. Sort the employees based on their hire date then Print the sorted array
+            var sortedEmployees = EmpArr.OrderBy(e => e.HireDate.ToDateTime()).ToArray();
+
+            // Print sorted employees
+            Console.WriteLine("Employees sorted by hire date:");
+          
+            foreach (var emp in sortedEmployees)
+            {
+                Console.WriteLine(emp);
+                
+                Console.WriteLine("----------------------------");
+            }
+            //no boxing or unboxing occurs
+
+            #endregion
+
+         
 
         }
     }
