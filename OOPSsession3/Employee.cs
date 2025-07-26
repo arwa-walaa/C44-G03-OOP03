@@ -10,47 +10,33 @@ namespace OOPSsession3
     {
         private int _id;
         private string _name;
-        private SecurityPrivilege _securityLevel;
         private decimal _salary;
-        private HiringDate _hireDate;
-        private Gender _gender;
 
-        // Properties
         public int ID
         {
-            get { return _id; }
-            set { _id = value; }
+            get => _id;
+            set => _id = value > 0 ? value
+                : throw new ArgumentException("ID must be positive");
         }
 
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get => _name;
+            set => _name = !string.IsNullOrWhiteSpace(value) ? value.Trim()
+                : throw new ArgumentException("Name cannot be empty");
         }
 
-        public SecurityPrivilege SecurityLevel
-        {
-            get { return _securityLevel; }
-            set { _securityLevel = value; }
-        }
+        public SecurityPrivilege SecurityLevel { get; set; }
 
         public decimal Salary
         {
-            get { return _salary; }
-            set { _salary = value; }
+            get => _salary;
+            set => _salary = value >= 0 ? value
+                : throw new ArgumentException("Salary cannot be negative");
         }
 
-        public HiringDate HireDate
-        {
-            get { return _hireDate; }
-            set { _hireDate = value; }
-        }
-
-        public Gender EmployeeGender
-        {
-            get { return _gender; }
-            set { _gender = value; }
-        }
+        public HiringDate HireDate { get; set; }
+        public Gender EmployeeGender { get; set; }
 
         // Constructor
         public Employee(int id, string name, SecurityPrivilege securityLevel,
